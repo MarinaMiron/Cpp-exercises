@@ -12,7 +12,7 @@ int main()
 {   
     //ProductFactory* prod1 = new LaptopFactory("Asus ROG", 1299.99, 5, "Electronics", 101, 16, "Intel i7", 512, "NVIDIA RTX 3060");
     ProductFactory factory;
-    auto laptop = factory.createProduct("laptop");
+    auto laptop = factory.createProduct<Laptop>("Asus ROG", 1299.99, 5, "Electronics", 101, 16, "Intel i7", 512, "NVIDIA RTX 3060");
     // ProductFactory* prod2 = new SmartphoneFactory();
     // ProductFactory* prod3 = new SmartwatchFactory();
     // std::cout << prod1->getName() << std::endl;
@@ -20,7 +20,9 @@ int main()
     // delete laptop;
     // delete prod2;
     // delete prod3;
-    cout << "Programul a rulat cu succes!" << endl;
+    cout << laptop->getName() << endl;
+    cout << laptop->getRam() << endl;
+    cout << "Programul a rulat cu succes. Ura! " << endl;
     
     return 0;
 }

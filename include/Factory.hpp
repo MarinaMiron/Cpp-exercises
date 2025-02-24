@@ -4,6 +4,7 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#include <utility>
 
 #include "../include/Product.hpp"
 #include "../include/Laptop.hpp"
@@ -13,7 +14,10 @@
 class ProductFactory
 {
     public:
-        ProductFactory();
-        std::unique_ptr<Product> createProduct(const std::string& type);
+        template<typename T, typename... Args>
+        std::unique_ptr<T> createProduct(Args&&... args)
+        {
+            return std::make_unique<T>(std::forward<Args>(args)...);
+        };
 };
 #endif
