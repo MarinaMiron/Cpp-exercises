@@ -1,3 +1,7 @@
+#ifndef ORDER_H
+#define ORDER_H
+
+using namespace std;
 #include <iostream>
 #include "Customer.hpp"
 using namespace std;
@@ -5,9 +9,6 @@ using namespace std;
 #include <vector>
 #include <memory>
 
-#ifndef ORDER_H //ensuring that this object is only initialized once
-#define ORDER_H
-using namespace std;
 class Order
 {
 private:
@@ -18,8 +19,12 @@ private:
     std::string status;
 
 public:
-    Order(/* args */);
+    Order(int orderId, std::vector<std::shared_ptr<Product>> products, std::shared_ptr<Customer> customer);
     ~Order();
-};
 
+    double calculateTotal() const;
+    std::string getStatus() const;
+    void updateStatus(const std::string &new_status);
+    void printOrderDetails() const;
+};
 #endif

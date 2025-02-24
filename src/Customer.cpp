@@ -38,6 +38,16 @@ void Customer::removeFromCart(std::shared_ptr<Product> product)
             cart.end());
 }
 
+const std::vector<std::shared_ptr<Product>>& Customer::getCart() const 
+{
+    return cart;
+}
+
+std::string Customer::getName() const
+{
+    return name;
+}
+
 double Customer::calculateCartTotal() const
 {
    return std::accumulate(cart.begin(), cart.end(), 00.0,

@@ -23,6 +23,8 @@ public:
 
     void addToCart(std::shared_ptr<Product> product);
     void removeFromCart(std::shared_ptr<Product> product_id);
+    const std::vector<std::shared_ptr<Product>>& getCart() const;
+    std::string getName() const;
     double calculateCartTotal() const;
     void printCartTotal() const;
 };
