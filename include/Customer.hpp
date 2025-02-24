@@ -1,8 +1,13 @@
 #include <iostream>
-#include <studio.h>
 using namespace std;
-
+#include "Product.hpp"
+#include <memory>
 #include <vector>
+
+#ifndef CUSTOMER_H //ensuring that this object is only initialized once
+#define CUSTOMER_H 
+
+using namespace std;
 
 class Customer
 {
@@ -15,10 +20,4 @@ public:
     ~Customer();
 };
 
-Customer::Customer(/* args */)
-{
-}
-
-Customer::~Customer()
-{
-}
+#endif
