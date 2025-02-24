@@ -4,7 +4,7 @@ using namespace std;
 #include <memory>
 #include <vector>
 
-#ifndef CUSTOMER_H //ensuring that this object is only initialized once
+#ifndef CUSTOMER_H
 #define CUSTOMER_H 
 
 using namespace std;
@@ -12,12 +12,19 @@ using namespace std;
 class Customer
 {
 private:
+    int id;
     std::string name;
     std::string email;
     std::vector<std::shared_ptr<Product>> cart;
 public:
-    Customer(/* args */);
+    Customer();
+    Customer(int id, std::string name, std::string email);
     ~Customer();
+
+    void addToCart(std::shared_ptr<Product> product);
+    void removeFromCart(std::shared_ptr<Product> product_id);
+    double calculateCartTotal() const;
+    void printCartTotal() const;
 };
 
 #endif

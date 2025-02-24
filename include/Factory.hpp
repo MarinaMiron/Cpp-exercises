@@ -15,9 +15,9 @@ class ProductFactory
 {
     public:
         template<typename T, typename... Args>
-        std::unique_ptr<T> createProduct(Args&&... args)
+        std::shared_ptr<T> createProduct(Args&&... args)
         {
-            return std::make_unique<T>(std::forward<Args>(args)...);
+            return std::make_shared<T>(std::forward<Args>(args)...);
         };
 };
 #endif
