@@ -57,7 +57,9 @@
         "xutility": "cpp",
         "numeric": "cpp",
         "algorithm": "cpp",
-        "optional": "cpp"
+        "optional": "cpp",
+        "functional": "cpp"
     },
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "enabled",
+    "problems.showCurrentInStatus": true
 }

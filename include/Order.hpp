@@ -24,6 +24,9 @@ public:
 
     double calculateTotal() const;
     std::string getStatus() const;
+    int getOrderId() const;
+    std::vector<std::shared_ptr<Product>> getProducts() const;
+    std::shared_ptr<Customer> getCustomer() const;
     void updateStatus(const std::string &new_status);
     void printOrderDetails() const;
 };

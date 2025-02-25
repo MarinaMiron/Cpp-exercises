@@ -22,27 +22,32 @@ Product::Product()
 //     cout << "Destructor called\n" << endl;
 // }
 
-std::string Product::getName()
+std::string Product::getName() const
 { 
     return name; 
 }
 
-double Product::getPrice()
+double Product::getPrice() const
 { 
     return price; 
 }
     
-int Product::getStock() 
+int Product::getStock() const 
 { 
     return stock; 
 }
 
-std::string Product::getCategory() 
+std::string Product::getCategory() const 
 { 
     return category;
 }
 
-int Product::getId() 
+int Product::getId() const 
 { 
     return id; 
+}
+
+void Product::setPrice(double newPrice)
+{
+    price = newPrice;
 }

@@ -48,6 +48,16 @@ std::string Customer::getName() const
     return name;
 }
 
+int Customer::getId() const
+{
+    return id;
+}
+
+std::string Customer::getEmail() const
+{
+    return email;
+}
+
 double Customer::calculateCartTotal() const
 {
    return std::accumulate(cart.begin(), cart.end(), 00.0,

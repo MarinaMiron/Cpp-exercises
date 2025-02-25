@@ -23,14 +23,12 @@ public:
     Product();
     Product(std::string name, double price, int stock, std::string category, int id);
 
-    std::string getName();
-    double getPrice();
-    int getStock();
-    std::string getCategory();
-    int getId();
+    std::string getName() const;
+    double getPrice() const;
+    int getStock() const;
+    std::string getCategory() const;
+    int getId() const;
 
-
-    // Funcție pur virtuală pentru afisare detalii
-    //virtual void display() const = 0;
+    void setPrice(double newPrice);
 };
 #endif

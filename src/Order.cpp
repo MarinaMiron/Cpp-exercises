@@ -33,6 +33,21 @@ std::string Order::getStatus() const
     return status;
 }
 
+int Order::getOrderId() const
+{
+    return orderId;
+}
+
+std::shared_ptr<Customer> Order::getCustomer() const
+{
+    return customer;
+}
+
+std::vector<std::shared_ptr<Product>> Order::getProducts() const
+{
+    return products;
+}
+
 void Order::updateStatus(const std::string &newStatus)
 {
     status = newStatus;
